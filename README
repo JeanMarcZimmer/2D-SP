@@ -1,14 +1,27 @@
-##################################################
-##                                              ##
-##            C Open Space Program              ##
-##                                              ##
-##################################################
+0-------------------------------------------------0
+|   #####           #####      #####    #######   |
+| ##     ##       ##     ##  ##     ##  ##     ## |
+| ##              ##     ##   ###       ##     ## |
+| ##        ##### ##     ##     ###     #######   |
+| ##              ##     ##       ###   ##        |
+| ##     ##       ##     ##  ##     ##  ##        |
+|   #####           #####      #####    ##        |
+|                                                 |
+| The  C  Open-source  Space Exploration  Program |
+0-------------------------------------------------0
 
 Open Space Program shall become a game, inspired by Kerbal Space Program®, developped by Squad.
 
 This is an open source program: anyone can get, modify and redistribute this program.
 
 This version does not use any of the resources of KSP.
+
+################################
+###
+### Authors:
+###
+
+# Jean-Marc ZIMMER jeanmarczimmer56@gmail.com
 
 ################################
 ###
@@ -35,3 +48,20 @@ This version does not use any of the resources of KSP.
 # everything.
 
 # compilation support for windows and mac OS
+
+################################
+###
+### Current implementations:
+###
+
+# command_line help and about (./C-OSP [-h|--help|--about])
+
+################################
+###
+### Get involved into the program !
+###
+
+# Don't hesitate to branch the program and submit your changes (just don't change too much things in one commit !)
+  Note that your name will then appear in the authors of the program (if you want to) !
+
+# Feel free to fork the repository, and try create this differently !
