@@ -8,11 +8,30 @@ Open Space Program shall become a game, inspired by Kerbal Space Program®, deve
 
 This is an open source program: anyone can get, modify and redistribute this program.
 
-This current version does not use any of the resources of KSP.
+This version does not use any of the resources of KSP.
 
 ################################
 ###
-### Thing to add:
+### Installing:
+###
+
+# currently Linux-only:
+
+  Run the following command:
+  make [option]
+
+       options:
+	all: compiles the program.
+	clean: removes binary files.
+	fclean: removes binary and executable files.
+	re: removes binary and executable, then recompiles.
+	exec: removes binary and executable, recompiles, then removes binary files.
+
+################################
+###
+### Things to add:
 ###
 
 # everything.
+
+# compilation support for windows and mac OS
