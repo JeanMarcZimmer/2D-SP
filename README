@@ -1,13 +1,13 @@
 0-------------------------------------------------0
-|   #####           #####      #####    #######   |
-| ##     ##       ##     ##  ##     ##  ##     ## |
-| ##              ##     ##   ###       ##     ## |
-| ##        ##### ##     ##     ###     #######   |
-| ##              ##     ##       ###   ##        |
-| ##     ##       ##     ##  ##     ##  ##        |
-|   #####           #####      #####    ##        |
+|   #####    #######           #####    #######   |
+| ##     ##  ##     ##       ##     ##  ##     ## |
+|       ###  ##     ##        ###       ##     ## |
+|     ###    ##     ## #####    ###     #######   |
+|   ###      ##     ##            ###   ##        |
+| ###        ##     ##       ##     ##  ##        |
+| #########  #######           #####    ##        |
 |                                                 |
-| The  C  Open-source  Space Exploration  Program |
+| The  C  Open-source  2D  Space Exploration Game |
 0-------------------------------------------------0
 
 Open Space Program shall become a game, inspired by Kerbal Space Program®, developped by Squad.
@@ -54,7 +54,7 @@ This version does not use any of the resources of KSP.
 ### Current implementations:
 ###
 
-# command_line help and about (./C-OSP [-h|--help|--about])
+# command_line help and about (./2D-SP [-h|--help|--about])
 
 ################################
 ###
