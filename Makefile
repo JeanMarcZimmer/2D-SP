@@ -16,7 +16,7 @@ SRC	=	src/main.c				\
 
 OBJ	=	$(SRC:.c=.o)
 
-NAME	=	C-OSP
+NAME	=	2D-SP
 
 CC	=	gcc
 
