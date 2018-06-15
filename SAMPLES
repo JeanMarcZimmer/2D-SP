@@ -1,0 +1,170 @@
+0-------------------------------------------------0
+|   #####    #######           #####    #######   |
+| ##     ##  ##     ##       ##     ##  ##     ## |
+|       ###  ##     ##        ###       ##     ## |
+|     ###    ##     ## #####    ###     #######   |
+|   ###      ##     ##            ###   ##        |
+| ###        ##     ##       ##     ##  ##        |
+| #########  #######           #####    ##        |
+|                                                 |
+| The  C  Open-source  2D  Space Exploration Game |
+0-------------------------------------------------0
+
+
+SAMPLES : gives organisation of saves and resources
+
+
+############################
+###
+### Saves
+###
+
+2D-SP/saves/
+\----save_name/
+|    \----mods.txt
+|    \----dates.txt
+|    \----spacecrafts/
+|    |    \----spacecraft_name/
+|    |         \----parts/
+|    |         |    \----part_name.txt
+|    |         \----vectors.txt
+|    \----characters.txt
+\---
+...
+
+mods.txt:
+0---------------------------------0
+|NAME                             |
+|NAME                             |
+|...                              |
+0---------------------------------0
+
+dates.txt:
+0---------------------------------0
+|creation_date:DATE               |
+|last_modification:DATE           |
+0---------------------------------0
+DATE format : dd/mm/yyyy/h/m/s
+
+part_name.txt:
+0---------------------------------0
+|part_resource:PATH               |
+|fixed:BOOL                       |
+|#if !fixed:                      |
+|     position:VECTOR             |
+|     direction:VECTOR            |
+|     speed:VECTOR                |
+|#if fuel tank:                   |
+|     fuel_amount:INT             |
+|#if engine:                      |
+|     thrust_limiter:INT          |
+|     status:BOOL                 |
+|#if scientific:                  |
+|     data:SCIENCE                |
+|     status:SCIENCE_STATUS       |
+0---------------------------------0
+VECTOR format : x/y
+BOOL format : TRUE | FALSE
+INT format : value
+FLOAT format : value
+SCIENCE_STATUS format : CLOSED | OPENED
+SCIENCE format : text
+
+characters.txt
+0---------------------------------0
+|texture:NAME                     |
+|sound:NAME                       |
+|name:NAME                        |
+|status:CHARACTER_STATUS          |
+0---------------------------------0
+NAME format : text
+CHARACTER_STATUS format : HAPPY | AFRAID | NEUTRAL | V_HAPPY | V_AFRAID | LONELY
+
+############################
+###
+### resources
+###
+
+2D-SP/resources/
+\----rocket_parts/
+|    \----part_textures/
+|    |    \----part_name.png
+|    \----part_sounds/
+|    |    \----part_name.ogg
+|    \----part_name.txt
+\----planets/
+|    \----planet_texture/
+|    |    \----planet_texture.png
+|    |    \----planet_atmosphere.png
+|    \----planet_name.txt
+\----background.png
+\----physics_constants.txt
+\----musics/
+|    \----NAME.ogg
+\----textures/
+|    \----NAME.png
+\----characters/
+|    \----NAME.ogg
+|    \----NAME.png
+\---
+...
+
+part_name.txt
+0---------------------------------0
+|texture:PATH                     |
+|mass:FLOAT                       |
+|tmp_resistance:FLOAT             |
+|g_resistance:FLOAT               |
+|#if fuel tank:                   |
+|     max_fuel:FLOAT              |
+|     fuel_type:FUEL              |
+|#if engine:                      |
+|     max_fuel:FLOAT              |
+|     max_oxydizer:FLOAT          |
+|     fuel_type:FUEL              |
+|     max_throttle:FLOAT          |
+|     sound:PATH                  |
+|#if antenna:                     |
+|     g_resistance_opened:FLOAT   |
+|     tmp_resistance_opened:FLOAT |
+|     transmission_power:FLOAT    |
+|     transmission_speed:FLOAT    |
+|#if command pod:                 |
+|     max_crew:INT                |
+|     electricity:FLOAT           |
+|     sas_power:FLOAT             |
+0---------------------------------0
+FUEL format : LIQUID | SOLID | L_OXYD | {documentation needed}
+
+planet_name.txt:
+0---------------------------------0
+|size:FLOAT                       |
+|atmosphere:FLOAT                 |
+|texture:PATH                     |
+|atmosphere_texture:PATH          |
+|mass:FLOAT                       |
+|atmosphere_levels:LEVELS         |
+0---------------------------------0
+LEVELS format : top:density/top:density/top:density/top:density/top:density
+       example EARTH : 5:1/20:0.7/50:0.4/70:0.2/100:0.1
+
+
+physics_constants.txt
+0------------------------------------------------------------0
+|G:0.00000000000000667                                       |  <-Gravitationnal constant
+|h:0.000000000000000000000000000000000626                    |  <-Planck constant
+|c:300000000                                                 |  <-light speed
+|D:0.00000000000000000000000000000000000000000000000000000111|  <-Cosmological constant
+0------------------------------------------------------------0
+
+############################
+###
+### mods
+###
+
+2D-SP/mods/
+\----mod_name/
+|    \----resources
+|    |    \----[see resources]
+\---
+...
