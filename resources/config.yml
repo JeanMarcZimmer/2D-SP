@@ -1,0 +1,23 @@
+version: 0.0
+keys:
+  pitch-up: W
+  pitch-down: S
+  full-throttle: Q
+  cut-throttle: E
+  throttle-up: A
+  throttle-down: D
+  lights: L
+  landing-gears: G
+  abort: A
+  warp-up: X
+  warp-down: W
+
+main-volume: 5
+music-volume: 5
+sfx-volume: 5
+
+screen-res: 1920:1080
+
+default-difficulty: NORMAL
+
+autosave-rate: 300

@@ -1,0 +1,88 @@
+0-------------------------------------------------0
+|   #####    #######           #####    #######   |
+| ##     ##  ##     ##       ##     ##  ##     ## |
+|       ###  ##     ##        ###       ##     ## |
+|     ###    ##     ## #####    ###     #######   |
+|   ###      ##     ##            ###   ##        |
+| ###        ##     ##       ##     ##  ##        |
+| #########  #######           #####    ##        |
+|                                                 |
+| The  C  Open-source  2D  Space Exploration Game |
+0-------------------------------------------------0
+
+CREATING_MODS
+
+############################
+###
+### Licence :
+###
+
+The MIT licence is necessary.
+
+mods can:
+  - add parts
+  - change textures/sounds
+  - change physics constants.
+
+############################
+###
+### general
+###
+
+Always use the default 'resources' folder file tree as an example.
+Anything out of this will be ignored.
+IF THERE ARE TOO MANY ERRORS, THE MOD WON'T EVEN BE LOADED.
+
+2D-SP/mods/
+\----mod_name/
+|    \----link.txt
+|    \----about.yml
+|    \----resources
+|    |    \----[see SAMPLE:resources]
+\---
+...
+
+link.txt:
+0---------------------------------0
+|LINK                             |
+0---------------------------------0
+LINK points to an https link.
+     IF link is not a secure http, the mod won't be loaded/displayed.
+
+MODS MUST HAVE THE SAME LICENCE (the MIT licence)
+
+about.yml:
+0---------------------------------0
+|author:NAME                      |
+|creation-date:DATE               |
+|description:                     |
+|  TEXT                           |
+0---------------------------------0
+DATE format : dd/mm/yyyy/hh/mm/ss
+
+############################
+###
+### adding parts
+###
+
+add them in the mod's folder using the same file tree as the default resources folder.
+If a part don't have a texture/sound : IT WON'T BE USED.
+
+############################
+###
+### Changing textures
+###
+
+add a file with the corresponding name in the correct sub-folder (corresponding to resources).
+The new texture/sound will be displayed/played instead of the default one.
+
+If 2+ mods change the same texture : the top-most mod in the game list will be used.
+
+############################
+###
+### Changing physics constants
+###
+
+WARNING: changing these (especially to negative numbers) may affect the gameplay, or make the game unplayable.
+
+used physics constants are defined in SAMPLES:resources.

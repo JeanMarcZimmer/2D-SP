@@ -1,0 +1,4 @@
+2D-SP
+src/*.o
+src/*/*.o
+src/*/*/*.o

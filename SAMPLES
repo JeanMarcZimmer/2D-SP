@@ -21,32 +21,34 @@ SAMPLES : gives organisation of saves and resources
 
 2D-SP/saves/
 \----save_name/
-|    \----mods.txt
-|    \----dates.txt
+|    \----mods.yml
+|    \----dates.yml
 |    \----spacecrafts/
 |    |    \----spacecraft_name/
 |    |         \----parts/
-|    |         |    \----part_name.txt
-|    |         \----vectors.txt
-|    \----characters.txt
+|    |         |    \----part_name.yml
+|    |         \----vectors.yml
+|    \----characters.yml
 \---
 ...
 
-mods.txt:
+mods.yml:
 0---------------------------------0
-|NAME                             |
-|NAME                             |
+|NAME:LINK                        |
+|NAME:LINK                        |
 |...                              |
 0---------------------------------0
+LINK has to point to the https download link. (direct download only available on official website)
+     IF one the links is not secure http, the save won't be loaded/displayed.
 
-dates.txt:
+dates.yml:
 0---------------------------------0
 |creation_date:DATE               |
 |last_modification:DATE           |
 0---------------------------------0
 DATE format : dd/mm/yyyy/h/m/s
 
-part_name.txt:
+part_name.yml:
 0---------------------------------0
 |part_resource:PATH               |
 |fixed:BOOL                       |
@@ -70,7 +72,7 @@ FLOAT format : value
 SCIENCE_STATUS format : CLOSED | OPENED
 SCIENCE format : text
 
-characters.txt
+characters.yml:
 0---------------------------------0
 |texture:NAME                     |
 |sound:NAME                       |
@@ -91,14 +93,14 @@ CHARACTER_STATUS format : HAPPY | AFRAID | NEUTRAL | V_HAPPY | V_AFRAID | LONELY
 |    |    \----part_name.png
 |    \----part_sounds/
 |    |    \----part_name.ogg
-|    \----part_name.txt
+|    \----part_name.yml
 \----planets/
 |    \----planet_texture/
 |    |    \----planet_texture.png
 |    |    \----planet_atmosphere.png
-|    \----planet_name.txt
+|    \----planet_name.yml
 \----background.png
-\----physics_constants.txt
+\----physics_constants.yml
 \----musics/
 |    \----NAME.ogg
 \----textures/
@@ -109,7 +111,7 @@ CHARACTER_STATUS format : HAPPY | AFRAID | NEUTRAL | V_HAPPY | V_AFRAID | LONELY
 \---
 ...
 
-part_name.txt
+part_name.yml:
 0---------------------------------0
 |texture:PATH                     |
 |mass:FLOAT                       |
@@ -136,7 +138,7 @@ part_name.txt
 0---------------------------------0
 FUEL format : LIQUID | SOLID | L_OXYD | {documentation needed}
 
-planet_name.txt:
+planet_name.yml:
 0---------------------------------0
 |size:FLOAT                       |
 |atmosphere:FLOAT                 |
@@ -149,13 +151,14 @@ LEVELS format : top:density/top:density/top:density/top:density/top:density
        example EARTH : 5:1/20:0.7/50:0.4/70:0.2/100:0.1
 
 
-physics_constants.txt
+physics_constants.yml:
 0------------------------------------------------------------0
 |G:0.00000000000000667                                       |  <-Gravitationnal constant
 |h:0.000000000000000000000000000000000626                    |  <-Planck constant
 |c:300000000                                                 |  <-light speed
 |D:0.00000000000000000000000000000000000000000000000000000111|  <-Cosmological constant
 0------------------------------------------------------------0
+constant names can't be changed by mods. Only values my change.
 
 ############################
 ###
@@ -164,7 +167,28 @@ physics_constants.txt
 
 2D-SP/mods/
 \----mod_name/
+|    \----link.txt
+|    \----about.yml
 |    \----resources
 |    |    \----[see resources]
 \---
 ...
+
+link.txt:
+0---------------------------------0
+|LINK                             |
+0---------------------------------0
+LINK points to an https link.
+     IF link is not a secure http, the mod won't be loaded/displayed.
+
+MODS MUST HAVE THE SAME LICENCE (the MIT licence)
+
+about.yml:
+0---------------------------------0
+|author:NAME                      |
+|creation-date:DATE               |
+|description:TEXT                 |
+0---------------------------------0
+
+
+See CREATING_MODS for more details.
