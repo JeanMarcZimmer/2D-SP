@@ -1,0 +1,16 @@
+0-------------------------------------------------0
+|   #####    #######           #####    #######   |
+| ##     ##  ##     ##       ##     ##  ##     ## |
+|       ###  ##     ##        ###       ##     ## |
+|     ###    ##     ## #####    ###     #######   |
+|   ###      ##     ##            ###   ##        |
+| ###        ##     ##       ##     ##  ##        |
+| #########  #######           #####    ##        |
+|                                                 |
+| The  C  Open-source  2D  Space Exploration Game |
+0-------------------------------------------------0
+
+LOGS
+
+You can clean logs that are over 30 days old by running 'make logs'
+Run 'make logs_all' to remove ALL logs from //2D_SP/logs/

@@ -6,12 +6,12 @@
 ** Jean-Marc Zimmer
 ** jeanmarczimmer56@gmail.com
 **
-** FILE: init_window/main.c
+** FILE: main.h
 */
 
-#include <stdio.h>
-#include "command_line_initiation.h"
+#ifndef MAIN_H_
+#define MAIN_H_
 
-int launch_game(void)
-{
-}
+#include "system/log.h"
+
+#endif /* MAIN_H_ */

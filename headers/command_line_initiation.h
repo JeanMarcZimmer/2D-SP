@@ -15,6 +15,6 @@
 int display_cl_usage_help(void);
 int display_cl_about(void);
 
-int get_command_line_parameters(int, char **);
+int get_command_line_parameters(int, char **, char **);
 
 #endif /* COMMAND_LINE_INITIATION_H_ */

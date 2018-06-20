@@ -11,10 +11,11 @@
 
 #include <getopt.h>
 #include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
 #include "command_line_initiation.h"
 
-static int manage_option(char c, char *optarg)
+static int manage_option(char c, char *optarg, char **log_file)
 {
 	switch (c) {
 	case 'h':
@@ -22,6 +23,9 @@ static int manage_option(char c, char *optarg)
 	case 'A':
 		return (display_cl_about());
 	case 'd':
+		return (0);
+	case 'L':
+		*log_file = strdup(optarg);
 		return (0);
 	default:
 		fprintf(stderr, "Syntax error. Try running ./C_OSP --help\n");
@@ -31,7 +35,7 @@ static int manage_option(char c, char *optarg)
 	return (84);
 }
 
-int get_command_line_parameters(int ac, char **av)
+int get_command_line_parameters(int ac, char **av, char **log_file)
 {
 	static struct option long_options[] = {
 		{"help", no_argument, 0, 'h'},
@@ -46,7 +50,7 @@ int get_command_line_parameters(int ac, char **av)
 	int status = 0;
 
 	while ((c = getopt_long(ac, av, "hd:", long_options, &option_index)) != -1) {
-		switch (manage_option(c, optarg)) {
+		switch (manage_option(c, optarg, log_file)) {
 		case (84):
 			return (84);
 		case (1):

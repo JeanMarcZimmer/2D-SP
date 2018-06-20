@@ -9,10 +9,17 @@
 ## FILE: Makefile
 ##
 
+
+######################################################################################
+###
+### COMPILATION
+###
+
 SRC	=	src/main.c				\
 		src/command_line/get_parameters.c	\
 		src/command_line/display_help.c		\
-		src/command_line/display_about.c
+		src/command_line/display_about.c	\
+		src/system/log.c
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -28,7 +35,7 @@ ERROR_F	=	-Wall -Werror
 
 CSFML_F	=	-lSFML/System.h -lSFML/Window.h -lSFML/Graphics.h -lSFML/Audio.h
 
-CFLAGS	+=	$(ERROR_F) $(CSFML_F)
+CFLAGS	+=	-D_GNU_SOURCE $(ERROR_F) $(CSFML_F)
 
 all:	$(NAME)
 
@@ -47,3 +54,18 @@ exec:	re
 	$(RM) $(OBJ)
 
 .PHONY:	all	clean	fclean	re	exec
+
+######################################################################################
+###
+### LOGS
+###
+
+LOG	=	logs/*.log
+
+logs:
+	find $(LOG)  -type f -mtime +30 -print | xargs rm -rf
+
+logs_all:
+	rm $(LOG)
+
+.PHONY:	logs	logs_all
